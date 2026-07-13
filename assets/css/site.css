@@ -1,0 +1,140 @@
+/* ============================================================
+   theapplockr.com — marketing site in the Ubersoft app feel.
+   Outfit, editorial uppercase, 4px radii, inverted-mono buttons.
+   Light default + dark via prefers-color-scheme. Self-hosted fonts
+   (no CDN) — fitting for a no-network product.
+   ============================================================ */
+
+@font-face { font-family:'Outfit'; font-style:normal; font-weight:400; font-display:swap; src:url('/assets/fonts/outfit-400.woff2') format('woff2'); }
+@font-face { font-family:'Outfit'; font-style:normal; font-weight:500; font-display:swap; src:url('/assets/fonts/outfit-500.woff2') format('woff2'); }
+@font-face { font-family:'Outfit'; font-style:normal; font-weight:600; font-display:swap; src:url('/assets/fonts/outfit-600.woff2') format('woff2'); }
+@font-face { font-family:'Outfit'; font-style:normal; font-weight:700; font-display:swap; src:url('/assets/fonts/outfit-700.woff2') format('woff2'); }
+
+:root{
+  --bg:#ffffff; --bg-soft:#f6f6f6; --card:#ffffff;
+  --line:#e8e8e8; --line2:#d8d8d8;
+  --text:#1a1a1a; --text-dim:#6b6b6b; --text-faint:#a8a8a8;
+  --accent:#007AFF; --ok:#067647;
+  --sans:'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --r:4px; --maxw:1080px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0e0e10; --bg-soft:#1a1a1d; --card:#151518;
+    --line:#2a2a2e; --line2:#3a3a40;
+    --text:#f0f0f2; --text-dim:#9a9aa0; --text-faint:#6a6a70;
+    --accent:#0A84FF; --ok:#4ade80;
+  }
+}
+
+*{margin:0; padding:0; box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:400;
+  line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  text-transform:uppercase; letter-spacing:0.02em; overflow-x:hidden;
+}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+h1,h2,h3{font-weight:700; letter-spacing:-0.02em; line-height:1.06}
+.eyebrow{font-size:11px; font-weight:600; letter-spacing:0.16em; color:var(--text-faint)}
+/* Free text (prose) opts out of the editorial uppercase where readability wins */
+.normalcase{text-transform:none; letter-spacing:0}
+
+/* announcement */
+.announce{background:var(--bg-soft); border-bottom:1px solid var(--line); text-align:center; padding:9px 16px; font-size:11px; font-weight:500; letter-spacing:0.12em; color:var(--text-dim)}
+.announce b{color:var(--text); font-weight:600}
+
+/* nav */
+nav{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
+.nav-in{display:flex; align-items:center; justify-content:space-between; max-width:var(--maxw); margin:0 auto; padding:15px 24px}
+.brand{display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; letter-spacing:-0.02em; color:var(--text)}
+.brand svg{width:26px; height:26px; display:block}
+.brand b{color:var(--text-dim); font-weight:400}
+.nav-r{display:flex; align-items:center; gap:24px}
+.nav-r a{font-size:13px; font-weight:500; color:var(--text-dim); transition:.15s}
+.nav-r a:hover{color:var(--text)}
+.nav-btn{background:var(--text); color:var(--bg) !important; padding:9px 18px; border-radius:var(--r); font-weight:600; font-size:12px; transition:.15s}
+.nav-btn:hover{opacity:.85}
+.nav-r .hide-sm{}
+@media(max-width:560px){ .nav-r .hide-sm{display:none} }
+
+/* hero */
+.hero{padding:clamp(56px,8vw,104px) 0 clamp(40px,6vw,72px); text-align:center}
+.hero .eyebrow{display:inline-block; margin-bottom:22px}
+.hero-mark{width:92px; height:92px; margin:0 auto 24px; display:block}
+.hero h1{font-size:clamp(40px,7vw,80px); font-weight:700; letter-spacing:-0.03em; max-width:16ch; margin:0 auto}
+.hero h1 .dim{color:var(--text-dim)}
+.hero .lede{font-size:clamp(15px,1.6vw,18px); font-weight:400; color:var(--text-dim); max-width:36em; margin:22px auto 0}
+.cta-row{display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:32px}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; height:50px; padding:0 26px; border-radius:var(--r); font-weight:600; font-size:14px; border:1px solid transparent; transition:.15s; cursor:pointer}
+.btn-primary{background:var(--text); color:var(--bg)}
+.btn-primary:hover{opacity:.85}
+.btn-ghost{background:transparent; color:var(--text); border-color:var(--line2)}
+.btn-ghost:hover{border-color:var(--text)}
+.price-note{margin-top:16px; font-size:12px; color:var(--text-faint); letter-spacing:.08em}
+
+/* trust strip */
+.trust{display:flex; gap:10px 22px; justify-content:center; flex-wrap:wrap; margin-top:30px; font-size:11px; font-weight:500; letter-spacing:.1em; color:var(--text-faint)}
+.trust span{display:inline-flex; align-items:center; gap:8px}
+.trust span::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--ok)}
+
+/* section */
+section{padding:clamp(48px,7vw,88px) 0}
+.section-head{text-align:center; max-width:40ch; margin:0 auto clamp(34px,4vw,54px)}
+.section-head .eyebrow{display:block; margin-bottom:14px}
+.section-head h2{font-size:clamp(26px,3.4vw,40px)}
+.section-head p{margin-top:14px; color:var(--text-dim); font-size:15px}
+
+/* feature grid */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:26px 24px}
+.card .ico{width:34px; height:34px; margin-bottom:16px; color:var(--text)}
+.card h3{font-size:15px; margin-bottom:9px}
+.card p{font-size:13px; color:var(--text-dim); line-height:1.6}
+
+/* big promise band */
+.band{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.promise{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; text-align:center}
+.promise .p-num{font-size:clamp(30px,4vw,46px); font-weight:700; letter-spacing:-0.03em}
+.promise .p-lab{font-size:12px; color:var(--text-dim); margin-top:6px}
+
+/* security list */
+.seclist{max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:2px}
+.secrow{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start; padding:20px 4px; border-bottom:1px solid var(--line)}
+.secrow .k{width:30px; height:30px; color:var(--ok); flex-shrink:0}
+.secrow h3{font-size:14px; margin-bottom:6px}
+.secrow p{font-size:13px; color:var(--text-dim); line-height:1.6}
+
+/* faq */
+.faq{max-width:760px; margin:0 auto}
+.faq details{border-bottom:1px solid var(--line); padding:6px 0}
+.faq summary{list-style:none; cursor:pointer; padding:18px 4px; font-size:15px; font-weight:600; display:flex; justify-content:space-between; align-items:center; gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+"; color:var(--text-faint); font-weight:400; font-size:22px; transition:.2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 4px 20px; color:var(--text-dim); font-size:14px; line-height:1.65; text-transform:none; letter-spacing:0}
+
+/* final cta */
+.final{text-align:center}
+.final h2{font-size:clamp(28px,4vw,48px); max-width:16ch; margin:0 auto}
+.final p{color:var(--text-dim); margin-top:16px; font-size:15px}
+
+/* footer */
+footer{border-top:1px solid var(--line); padding:40px 0; margin-top:20px}
+.foot-in{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px}
+.foot-in .brand{font-size:15px}
+.foot-links{display:flex; gap:22px; font-size:12px; color:var(--text-dim)}
+.foot-links a:hover{color:var(--text)}
+.foot-copy{width:100%; font-size:11px; color:var(--text-faint); letter-spacing:.08em}
+
+/* generic page (privacy/security) */
+.doc{max-width:760px; margin:0 auto; padding:clamp(40px,6vw,72px) 0}
+.doc h1{font-size:clamp(30px,4vw,44px); margin-bottom:10px}
+.doc .updated{color:var(--text-faint); font-size:12px; letter-spacing:.1em; margin-bottom:36px}
+.doc h2{font-size:18px; margin:34px 0 12px}
+.doc p, .doc li{color:var(--text-dim); font-size:14px; line-height:1.7; text-transform:none; letter-spacing:0}
+.doc ul{padding-left:20px; margin:10px 0}
+.doc li{margin:6px 0}
+.doc strong{color:var(--text)}
+.doc a{color:var(--accent)}

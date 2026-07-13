@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security | The App Lockr</title>
+<meta name="description" content="How The App Lockr protects your passwords: no network permission, Argon2id + AES-256-GCM, Android Keystore-bound biometrics, and a local-only design you can verify.">
+<link rel="canonical" href="https://theapplockr.com/security.html">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="currentColor"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      The App <b>Lockr</b>
+    </a>
+    <div class="nav-r">
+      <a href="/#faq" class="hide-sm">FAQ</a>
+      <a href="/privacy.html" class="hide-sm">Privacy</a>
+      <a href="/download.html" class="nav-btn">Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <article class="doc">
+    <h1>Security</h1>
+    <div class="updated">THE PLAIN-ENGLISH VERSION — AND THE DETAILS</div>
+
+    <p>The App Lockr is built on one idea: your passwords should never leave your device, and you shouldn't have to take our word for it. Here's exactly how that works.</p>
+
+    <h2>1. No network permission — the claim you can verify</h2>
+    <p>Android apps must declare the permissions they use. The App Lockr does <strong>not</strong> declare the <code>INTERNET</code> permission at all. That's not a promise in a policy document — it's a fact anyone can check, and it means the app is technically incapable of sending your passwords anywhere. Our build even fails automatically if that permission ever slips back in through a dependency.</p>
+
+    <h2>2. Your master password</h2>
+    <p>When you unlock the vault, your master password is run through <strong>Argon2id</strong> — a deliberately slow, memory-hard function designed to resist brute-force guessing. The result is a key that unwraps your vault. Your master password itself is used briefly in the device's native memory and then wiped. It is never written to disk and never transmitted.</p>
+
+    <h2>3. The vault</h2>
+    <p>Your entries live in a single file encrypted with <strong>AES-256-GCM</strong>, the same authenticated encryption standard used across the industry. Each entry's secret is sealed on its own and decrypted only at the moment you view or fill it — the list of site names you see is kept separate from the passwords themselves.</p>
+
+    <h2>4. Fingerprint unlock, bound to your hardware</h2>
+    <p>Unlocking with your fingerprint isn't a shortcut around the encryption — it's tied to it. The key that makes biometric unlock possible is stored in the <strong>Android Keystore</strong>, and the operating system refuses to release it without a fresh biometric or device-credential check. On phones with a secure element, it's held there.</p>
+
+    <h2>5. On-screen protection</h2>
+    <p>Vault screens are marked secure, so they don't show up in screenshots or the app-switcher thumbnail. The app locks itself the instant it leaves the foreground, and after a timeout you set. Passwords copied to the clipboard are cleared automatically.</p>
+
+    <h2>6. Phishing-resistant autofill</h2>
+    <p>When The App Lockr offers to fill a login, it matches on the real website domain — exactly, never loosely. A look-alike address such as <code>paypal.com.evil.io</code> will never surface your PayPal entry. This is a deliberate safety feature, not a convenience trade-off.</p>
+
+    <h2>7. Backups, without a cloud</h2>
+    <p>You can export your entire vault as a single file. That file is <strong>already encrypted</strong> — unreadable without your master password — so it's safe to keep on your own storage or move to a new phone. There is no cloud service in the middle, because there is no cloud service at all.</p>
+
+    <h2>The honest trade-off</h2>
+    <p>Because nothing leaves your device and there is no account, <strong>no one can recover your vault if you lose both your master password and your device</strong> — not even us. That is the direct consequence of real privacy, and we'd rather say it plainly than pretend otherwise. Keep your master password safe, and keep a backup.</p>
+
+    <p style="margin-top:36px"><a href="/">← Back to The App Lockr</a></p>
+  </article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <a class="brand" href="/"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="currentColor"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" fill="none"/></svg> The App <b>Lockr</b></a>
+      <div class="foot-links"><a href="/security.html">Security</a><a href="/privacy.html">Privacy</a><a href="/#faq">FAQ</a></div>
+      <div class="foot-copy">© 2026 UBERSOFT · THE APP LOCKR</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
