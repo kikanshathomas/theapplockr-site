@@ -53,7 +53,7 @@
       The App <b>Lockr</b>
     </a>
     <div class="nav-r">
-      <a href="/security.html" class="hide-sm">Security</a>
+      <a href="/#security" class="hide-sm">Security</a>
       <a href="#faq" class="hide-sm">FAQ</a>
       <a href="/privacy.html" class="hide-sm">Privacy</a>
       <a href="/download.html" class="nav-btn">Get the app</a>
@@ -69,7 +69,7 @@
     <p class="lede normalcase">The App Lockr is a password manager with no account, no cloud, and — uniquely — no network permission at all. Your logins are encrypted on your phone and autofilled anywhere. Nothing to sync, nothing to breach.</p>
     <div class="cta-row" id="get">
       <a href="/download.html" class="btn btn-primary">Get it on Google Play</a>
-      <a href="/security.html" class="btn btn-ghost">How it's secured</a>
+      <a href="/#security" class="btn btn-ghost">How it's secured</a>
     </div>
     <div class="price-note">$4.99 ONE-TIME · NO SUBSCRIPTION · NO ADS</div>
     <div class="trust">
@@ -84,7 +84,7 @@
 <section id="features">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">WHY IT'S DIFFERENT</span>
+      <span class="eyebrow">FEATURES</span>
       <h2>Most managers ask you to trust their servers. This one has none.</h2>
       <p class="normalcase">Every design choice serves one promise: the secrets stay with you.</p>
     </div>
@@ -136,14 +136,18 @@
   </section>
 </div>
 
-<section>
+<section id="security">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">UNDER THE HOOD</span>
+      <span class="eyebrow">WHY IT'S DIFFERENT</span>
       <h2>Security you can explain to a friend</h2>
       <p class="normalcase">No jargon required — but the details are here for the people who want them.</p>
     </div>
     <div class="seclist">
+      <div class="secrow">
+        <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
+        <div><h3>No internet permission — and you can verify it</h3><p class="normalcase">Android apps must declare their permissions, and The App Lockr never declares internet access — a fact anyone can check, not a promise in a policy. Our build fails automatically if that permission ever sneaks in through a dependency.</p></div>
+      </div>
       <div class="secrow">
         <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
         <div><h3>Your master password never leaves memory</h3><p class="normalcase">It's stretched with Argon2id into a key that unwraps your vault, used briefly in native memory, then wiped. It's never stored, never transmitted.</p></div>
@@ -158,9 +162,14 @@
       </div>
       <div class="secrow">
         <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
-        <div><h3>The screen can't be captured</h3><p class="normalcase">Vault screens are marked secure, so they don't appear in screenshots or the app-switcher preview. The app auto-locks the moment it leaves the foreground.</p></div>
+        <div><h3>The screen can't be captured</h3><p class="normalcase">Vault screens are marked secure, so they don't appear in screenshots or the app-switcher preview. The app auto-locks the moment it leaves the foreground, and clipboard copies clear themselves.</p></div>
+      </div>
+      <div class="secrow">
+        <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
+        <div><h3>The honest trade-off</h3><p class="normalcase">Because nothing leaves your device and there's no account, no one can recover a lost vault — not even us. That's the direct consequence of real privacy, and we'd rather say it plainly. Keep your master password safe, and keep a backup.</p></div>
       </div>
     </div>
+    <p class="rev-note">SECURITY QUESTIONS OR SOMETHING TO REPORT — <a href="mailto:support@ubersoft.pro" style="text-decoration:underline; text-underline-offset:2px">SUPPORT@UBERSOFT.PRO</a></p>
   </div>
 </section>
 
@@ -202,25 +211,24 @@
         <p class="normalcase">Your passwords never leave your device. No account, no cloud, no network permission.</p>
       </div>
       <div class="foot-col">
-        <h4>PRODUCT</h4>
+        <h4>Product</h4>
         <a href="/#features">Features</a>
-        <a href="/security.html">Security</a>
+        <a href="/#security">Why it's different</a>
         <a href="/#faq">FAQ</a>
       </div>
       <div class="foot-col">
-        <h4>COMPANY</h4>
+        <h4>Company</h4>
         <a href="/privacy.html">Privacy Policy</a>
         <a href="mailto:support@ubersoft.pro">Support</a>
       </div>
       <div class="foot-col">
-        <h4>GET THE APP</h4>
+        <h4>Get the app</h4>
         <a href="https://play.google.com/store/apps/details?id=com.theapplockr.app" target="_blank" rel="noopener">Google Play</a>
-        <a href="/download.html">Download page</a>
       </div>
     </div>
     <p class="foot-legal">
-      NO ACCOUNTS, NO TRACKING — YOUR DATA NEVER LEAVES YOUR DEVICE.<br>
-      GOOGLE PLAY AND THE GOOGLE PLAY LOGO ARE TRADEMARKS OF GOOGLE LLC.<br>© <span id="cpyear">2026</span> <a href="https://ubersoft.pro" target="_blank" rel="noopener">UBERSOFT</a>. ALL RIGHTS RESERVED.
+      No accounts, no tracking — your data never leaves your device.<br>
+      Google Play and the Google Play logo are trademarks of Google LLC.<br>© <span id="cpyear">2026</span> <a href="https://ubersoft.pro" target="_blank" rel="noopener">Ubersoft</a>. All rights reserved.
     </p>
   </div>
 </footer>
