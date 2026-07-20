@@ -119,12 +119,8 @@ section{padding:clamp(48px,7vw,88px) 0}
 .card h3{font-size:15px; margin-bottom:9px}
 .card p{font-size:13px; color:var(--text-dim); line-height:1.6}
 
-/* big promise band */
-.band{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-.promise{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; text-align:center}
-.promise .p-num{font-size:clamp(30px,4vw,46px); font-weight:700; letter-spacing:-0.03em; color:var(--accent)}
-.promise .p-num.txt{font-size:clamp(24px,3vw,38px); line-height:1.25}
-.promise .p-lab{font-size:12px; color:var(--text-dim); margin-top:6px}
+/* text-valued stat (AES-256) sits in the same line box as the numeric ones */
+.stat .n.txt{font-size:clamp(22px,3vw,34px); display:flex; align-items:center; justify-content:center; height:clamp(30px,4vw,44px)}
 
 /* stats band (ZBT house pattern: hairline grid of four) */
 .stats{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg-soft)}
