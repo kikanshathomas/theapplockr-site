@@ -19,7 +19,9 @@
 <link rel="canonical" href="https://theapplockr.com/">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">
 {
@@ -44,40 +46,33 @@
 </head>
 <body>
 
-<div class="announce">A NEW KIND OF PASSWORD MANAGER — <b>NO ACCOUNT. NO CLOUD. NO NETWORK PERMISSION.</b></div>
+<div class="announce">A new kind of password manager · <b>$4.99 one-time</b> · no account, no cloud, no network permission</div>
 
 <nav>
   <div class="nav-in">
-    <a class="brand" href="/">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="currentColor"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="15" r="1.6" fill="var(--bg)"/><rect x="11.2" y="15.6" width="1.6" height="3" rx="0.8" fill="var(--bg)"/></svg>
-      The App <b>Lockr</b>
-    </a>
-    <div class="nav-r">
-      <a href="/#security" class="hide-sm">Security</a>
-      <a href="#faq" class="hide-sm">FAQ</a>
-      <a href="/privacy.html" class="hide-sm">Privacy</a>
-      <a href="/download.html" class="nav-btn">Get the app</a>
+    <a class="brand" href="/">The App <b>Lockr</b></a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-r" id="navLinks">
+      <a href="/#features">Features</a>
+      <a href="/#security">Why it's different</a>
+      <a href="/#faq">FAQ</a>
+      <a class="nav-btn" href="/download.html">Get the app</a>
     </div>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="wrap">
-    <span class="eyebrow">BY UBERSOFT</span>
-    <svg class="hero-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="currentColor"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="15" r="1.6" fill="var(--bg)"/><rect x="11.2" y="15.6" width="1.6" height="3.2" rx="0.8" fill="var(--bg)"/></svg>
+    <img class="app-icon hero-icon" src="/assets/img/app-icon.png" alt="The App Lockr app icon" width="96" height="96">
+    <span class="eyebrow">The App Lockr</span>
     <h1>Your passwords <span class="dim">never leave your device.</span></h1>
     <p class="lede normalcase">The App Lockr is a password manager with no account, no cloud, and — uniquely — no network permission at all. Your logins are encrypted on your phone and autofilled anywhere. Nothing to sync, nothing to breach.</p>
-    <div class="cta-row" id="get">
-      <a href="/download.html" class="btn btn-primary">Get it on Google Play</a>
-      <a href="/#security" class="btn btn-ghost">How it's secured</a>
+    <div class="badges" id="get">
+      <a class="gp-badge" href="https://play.google.com/store/apps/details?id=com.theapplockr.app" target="_blank" rel="noopener"><img src="assets/img/google-play-badge.png" alt="Get it on Google Play" height="54"></a>
     </div>
-    <div class="price-note">$4.99 ONE-TIME · NO SUBSCRIPTION · NO ADS</div>
-    <div class="trust">
-      <span>NO ACCOUNT</span>
-      <span>NO CLOUD</span>
-      <span>NO NETWORK PERMISSION</span>
-      <span>NO ANALYTICS</span>
-    </div>
+    <div class="trust"><span>No account</span><span>Fully offline</span><span>Pay once</span></div>
   </div>
 </header>
 
@@ -127,10 +122,10 @@
   <section>
     <div class="wrap">
       <div class="promise">
-        <div><div class="p-num">0</div><div class="p-lab">SERVERS THAT HOLD YOUR DATA</div></div>
-        <div><div class="p-num">0</div><div class="p-lab">ACCOUNTS TO CREATE</div></div>
-        <div><div class="p-num">0</div><div class="p-lab">TRACKERS OR ANALYTICS</div></div>
-        <div><div class="p-num">$4.99</div><div class="p-lab">ONCE — THEN IT'S YOURS</div></div>
+        <div><div class="p-num txt">AES-256</div><div class="p-lab">THE ENCRYPTION SEALING YOUR VAULT</div></div>
+        <div><div class="p-num">0</div><div class="p-lab">INTERNET PERMISSIONS — VERIFY IT YOURSELF</div></div>
+        <div><div class="p-num">100%</div><div class="p-lab">OF YOUR VAULT STAYS IN YOUR POCKET</div></div>
+        <div><div class="p-num">$4.99</div><div class="p-lab">ONCE — THEN IT'S YOURS FOR GOOD</div></div>
       </div>
     </div>
   </section>
@@ -204,10 +199,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="/">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="currentColor"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-          The App <b>Lockr</b>
-        </a>
+        <a class="brand" href="/">The App <b>Lockr</b></a>
         <p class="normalcase">Your passwords never leave your device. No account, no cloud, no network permission.</p>
       </div>
       <div class="foot-col">
@@ -232,6 +224,7 @@
     </p>
   </div>
 </footer>
+  <script>(function(){var tg=document.getElementById('navToggle'),lk=document.getElementById('navLinks');if(tg&&lk){tg.addEventListener('click',function(){var open=lk.classList.toggle('open');tg.setAttribute('aria-expanded',open?'true':'false');});lk.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){lk.classList.remove('open');tg.setAttribute('aria-expanded','false');});});}})();</script>
 
 
   <script data-goatcounter="https://theapplockr.goatcounter.com/count"

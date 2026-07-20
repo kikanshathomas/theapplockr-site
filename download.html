@@ -17,7 +17,9 @@
 <link rel="canonical" href="https://theapplockr.com/download.html">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/css/site.css">
 <style>
   .dl{min-height:calc(100vh - 140px); display:flex; align-items:center; padding:clamp(48px,8vw,96px) 0; text-align:center}
@@ -37,14 +39,15 @@
 
 <nav>
   <div class="nav-in">
-    <a class="brand" href="/">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="currentColor"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-      The App <b>Lockr</b>
-    </a>
-    <div class="nav-r">
-      <a href="/#security" class="hide-sm">Security</a>
-      <a href="/#faq" class="hide-sm">FAQ</a>
-      <a href="/privacy.html" class="hide-sm">Privacy</a>
+    <a class="brand" href="/">The App <b>Lockr</b></a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-r" id="navLinks">
+      <a href="/#features">Features</a>
+      <a href="/#security">Why it's different</a>
+      <a href="/#faq">FAQ</a>
+      <a class="nav-btn" href="/download.html">Get the app</a>
     </div>
   </div>
 </nav>
@@ -71,10 +74,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="/">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5" fill="currentColor"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-          The App <b>Lockr</b>
-        </a>
+        <a class="brand" href="/">The App <b>Lockr</b></a>
         <p class="normalcase">Your passwords never leave your device. No account, no cloud, no network permission.</p>
       </div>
       <div class="foot-col">
@@ -112,6 +112,7 @@
     }
   })();
 </script>
+  <script>(function(){var tg=document.getElementById('navToggle'),lk=document.getElementById('navLinks');if(tg&&lk){tg.addEventListener('click',function(){var open=lk.classList.toggle('open');tg.setAttribute('aria-expanded',open?'true':'false');});lk.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){lk.classList.remove('open');tg.setAttribute('aria-expanded','false');});});}})();</script>
 
   <script data-goatcounter="https://theapplockr.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
