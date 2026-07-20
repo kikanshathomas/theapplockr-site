@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The App Lockr | Your passwords never leave your device</title>
-<meta name="description" content="The App Lockr is a local-only Android password manager. No account, no cloud, and no network permission at all — your passwords are encrypted on your device and autofill anywhere. $4.99 one-time, by Ubersoft.">
+<title>The App Lockr | Lock any app behind your fingerprint</title>
+<meta name="description" content="The App Lockr locks any Android app behind your phone's own fingerprint or PIN — WhatsApp, photos, banking, anything. No account, no cloud, and no internet permission at all. $4.99 one-time, by Ubersoft.">
 <meta property="og:title" content="The App Lockr">
-<meta property="og:description" content="A password manager with no account, no cloud, and no network permission. Your passwords never leave your device.">
+<meta property="og:description" content="Lock any app behind your fingerprint. No account, no cloud, no internet permission.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://theapplockr.com">
 <meta property="og:image" content="https://theapplockr.com/assets/img/og.png">
@@ -14,7 +14,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The App Lockr">
-<meta name="twitter:description" content="Your passwords never leave your device.">
+<meta name="twitter:description" content="Lock any app behind your fingerprint.">
 <meta name="twitter:image" content="https://theapplockr.com/assets/img/og.png">
 <link rel="canonical" href="https://theapplockr.com/">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -35,18 +35,18 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Where are my passwords stored?","acceptedAnswer":{"@type":"Answer","text":"Only on your device, in a single encrypted vault file. There is no account and no cloud. The app requests no network permission at all, so your passwords physically cannot be sent anywhere."}},
-    {"@type":"Question","name":"How does autofill work without an account?","acceptedAnswer":{"@type":"Answer","text":"The App Lockr registers as your Android autofill service. When a login screen appears, it offers a matching entry as a suggestion and, after your fingerprint or master password, fills it — the app's own screen never has to open."}},
-    {"@type":"Question","name":"What if I lose my master password?","acceptedAnswer":{"@type":"Answer","text":"Because nothing leaves your device and there is no account, no one can reset it — not even us. That is the point. Keep your master password safe and export a backup you can restore from."}},
-    {"@type":"Question","name":"Is it really pay-once?","acceptedAnswer":{"@type":"Answer","text":"Yes — $4.99 one time on Google Play. No subscription, no in-app purchases, no ads."}},
-    {"@type":"Question","name":"How do backups work with no cloud?","acceptedAnswer":{"@type":"Answer","text":"You export the vault as an already-encrypted file to wherever you choose. Moving to a new phone is export then import. The file is unreadable without your master password, so it is safe to store anywhere."}}
+    {"@type":"Question","name":"How does it lock other apps?","acceptedAnswer":{"@type":"Answer","text":"With Android's usage access, The App Lockr notices a protected app opening and immediately puts its lock screen in front of it. Your phone's own fingerprint or PIN opens the door."}},
+    {"@type":"Question","name":"Is my fingerprint stored somewhere?","acceptedAnswer":{"@type":"Answer","text":"No. The check is Android's own biometric prompt; the app is only told whether it passed. Nothing about your fingerprint exists in the app — and with no internet permission, it could not be sent anywhere anyway."}},
+    {"@type":"Question","name":"Can it see what I do inside my apps?","acceptedAnswer":{"@type":"Answer","text":"No. Usage access tells it which app came to the front — never screen content, keystrokes, or messages. It keeps no history, and it has no network access to send anything."}},
+    {"@type":"Question","name":"What happens when I hand someone my phone?","acceptedAnswer":{"@type":"Answer","text":"They can use everything you did not lock. The moment the screen turns off, every locked app re-locks — so what is yours stays yours."}},
+    {"@type":"Question","name":"Is it really pay-once?","acceptedAnswer":{"@type":"Answer","text":"Yes — $4.99 one time on Google Play. No subscription, no in-app purchases, no ads."}}
   ]
 }
 </script>
 </head>
 <body>
 
-<div class="announce">A new kind of password manager · <b>$4.99 one-time</b> · no account, no cloud, no network permission</div>
+<div class="announce">An app locker with nothing to hide · <b>$4.99 one-time</b> · no account, no ads, no internet permission</div>
 
 <nav>
   <div class="nav-in">
@@ -67,8 +67,8 @@
   <div class="wrap">
     <img class="app-icon hero-icon" src="/assets/img/app-icon.png" alt="The App Lockr app icon" width="96" height="96">
     <span class="eyebrow">The App Lockr</span>
-    <h1>Your passwords <span class="dim">never leave your device.</span></h1>
-    <p class="lede normalcase">The App Lockr is a password manager with no account, no cloud, and — uniquely — no network permission at all. Your logins are encrypted on your phone and autofilled anywhere. Nothing to sync, nothing to breach.</p>
+    <h1>Hand over your phone, <span class="dim">not your whole life.</span></h1>
+    <p class="lede normalcase">The App Lockr locks any app behind your phone's own fingerprint or PIN — WhatsApp, photos, banking, whatever's yours. No account, no cloud, and — uniquely — no internet permission at all, so what you lock stays your business.</p>
     <div class="badges" id="get">
       <a class="gp-badge" href="https://play.google.com/store/apps/details?id=com.theapplockr.app" target="_blank" rel="noopener"><img src="assets/img/google-play-badge.png" alt="Get it on Google Play" height="54"></a>
     </div>
@@ -79,9 +79,9 @@
 <div class="stats">
   <div class="wrap" style="padding:0">
     <div class="stats-in">
-      <div class="stat"><div class="ico" style="color:var(--accent)"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="n txt">AES-256</div><div class="k">Vault encryption</div></div>
+      <div class="stat"><div class="ico" style="color:var(--accent)"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div><div class="n txt">Any</div><div class="k">App, lockable</div></div>
       <div class="stat"><div class="ico" style="color:var(--ok)"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><path d="M4 4l16 16"/></svg></div><div class="n">0</div><div class="k">Internet permissions</div></div>
-      <div class="stat"><div class="ico" style="color:var(--ok)"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div><div class="n">100<span class="a">%</span></div><div class="k">On your device</div></div>
+      <div class="stat"><div class="ico" style="color:var(--accent)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div><div class="n">8</div><div class="k">Languages</div></div>
       <div class="stat"><div class="ico" style="color:var(--accent)"><svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.3"/></svg></div><div class="n"><span class="a">$</span>4.99</div><div class="k">One-time</div></div>
     </div>
   </div>
@@ -91,40 +91,40 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">FEATURES</span>
-      <h2>Inside the vault</h2>
+      <h2>How it locks</h2>
       <p class="normalcase">Real screenshots from the app — tap any of them for a closer look.</p>
     </div>
     <div class="feature">
       <div class="ftext">
-        <span class="eyebrow">THE VAULT</span>
-        <h2>Every login, one locked list.</h2>
-        <p class="normalcase">Sites, usernames, and notes at a glance — search finds anything in a keystroke. The secrets themselves stay sealed until the moment you unlock them.</p>
+        <span class="eyebrow">THE GUARD</span>
+        <h2>One switch, everything locked.</h2>
+        <p class="normalcase">Protection is one big switch — flip it and every app you chose is behind your fingerprint. Pause it just as fast. It's your phone; the locker never argues.</p>
       </div>
-      <div class="fviz"><button class="shot-link" type="button" data-full="/assets/img/shot-vault.webp" aria-label="Enlarge screenshot: the vault list"><img class="shotframe" src="/assets/img/shot-vault.png" srcset="/assets/img/shot-vault.webp" alt="The vault: every login in one searchable locked list" loading="lazy" width="460" height="818"></button></div>
+      <div class="fviz"><button class="shot-link" type="button" data-full="/assets/img/shot-home.webp" aria-label="Enlarge screenshot: protection on, locked apps listed"><img class="shotframe" src="/assets/img/shot-home.png" srcset="/assets/img/shot-home.webp" alt="Home screen: protection on, guarding WhatsApp, Photos and Chase" loading="lazy" width="460" height="818"></button></div>
     </div>
     <div class="feature flip">
       <div class="ftext">
-        <span class="eyebrow">ONE ENTRY</span>
-        <h2>Each secret, sealed on its own.</h2>
-        <p class="normalcase">Open an entry and copy what you need — passwords reveal only on tap, and the clipboard clears itself. Nothing is decrypted until you ask.</p>
+        <span class="eyebrow">PICK YOUR APPS</span>
+        <h2>Lock exactly what's yours.</h2>
+        <p class="normalcase">Every installed app in one list — flip a toggle to protect it, search finds anything in a keystroke. Lock three apps or thirty; change your mind any time.</p>
       </div>
-      <div class="fviz"><button class="shot-link" type="button" data-full="/assets/img/shot-entry.webp" aria-label="Enlarge screenshot: a vault entry"><img class="shotframe" src="/assets/img/shot-entry.png" srcset="/assets/img/shot-entry.webp" alt="A single entry: username and password sealed, copy buttons ready" loading="lazy" width="460" height="818"></button></div>
+      <div class="fviz"><button class="shot-link" type="button" data-full="/assets/img/shot-apps.webp" aria-label="Enlarge screenshot: the app picker"><img class="shotframe" src="/assets/img/shot-apps.png" srcset="/assets/img/shot-apps.webp" alt="The app picker: every installed app with a lock toggle" loading="lazy" width="460" height="818"></button></div>
     </div>
     <div class="feature">
       <div class="ftext">
-        <span class="eyebrow">THE GENERATOR</span>
-        <h2>Strong passwords on tap.</h2>
-        <p class="normalcase">Proper entropy from your device's secure RNG, with length and character rules you control. One tap, one password nobody's guessing.</p>
+        <span class="eyebrow">THREE PERMISSIONS</span>
+        <h2>Set up in a minute, explained straight.</h2>
+        <p class="normalcase">Each permission is asked for in plain words — what it does, and what it can't do. Nothing is granted silently, and Settings shows you the list any time.</p>
       </div>
-      <div class="fviz"><button class="shot-link" type="button" data-full="/assets/img/shot-generator.webp" aria-label="Enlarge screenshot: the password generator"><img class="shotframe" src="/assets/img/shot-generator.png" srcset="/assets/img/shot-generator.webp" alt="The generator: a strong random password with length and character controls" loading="lazy" width="460" height="818"></button></div>
+      <div class="fviz"><button class="shot-link" type="button" data-full="/assets/img/shot-permissions.webp" aria-label="Enlarge screenshot: the permission setup"><img class="shotframe" src="/assets/img/shot-permissions.png" srcset="/assets/img/shot-permissions.webp" alt="Setup: three permissions, each explained in plain words" loading="lazy" width="460" height="818"></button></div>
     </div>
     <div class="feature flip">
       <div class="ftext">
-        <span class="eyebrow">UNLOCK</span>
-        <h2>Your fingerprint is the key.</h2>
-        <p class="normalcase">Biometric unlock is bound to the Android Keystore — the OS won't release the key without a fresh check. Walk away, and the vault locks itself.</p>
+        <span class="eyebrow">NOTHING NEW TO REMEMBER</span>
+        <h2>Your phone's lock is the key.</h2>
+        <p class="normalcase">It uses the fingerprint or PIN your phone already has — no new password, no recovery questions. And it speaks 8 languages, each written natively.</p>
       </div>
-      <div class="fviz"><button class="shot-link" type="button" data-full="/assets/img/shot-unlock.webp" aria-label="Enlarge screenshot: the unlock screen"><img class="shotframe" src="/assets/img/shot-unlock.png" srcset="/assets/img/shot-unlock.webp" alt="The unlock screen: fingerprint or master password" loading="lazy" width="460" height="818"></button></div>
+      <div class="fviz"><button class="shot-link" type="button" data-full="/assets/img/shot-settings.webp" aria-label="Enlarge screenshot: settings"><img class="shotframe" src="/assets/img/shot-settings.png" srcset="/assets/img/shot-settings.webp" alt="Settings: theme, 8 languages, and every permission visible at a glance" loading="lazy" width="460" height="818"></button></div>
     </div>
   </div>
 </section>
@@ -133,39 +133,39 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">WHY IT'S DIFFERENT</span>
-      <h2>Most managers ask you to trust their servers. This one has none.</h2>
-      <p class="normalcase">Every design choice serves one promise: the secrets stay with you.</p>
+      <h2>Most app lockers phone home. This one can't.</h2>
+      <p class="normalcase">Every design choice serves one promise: what you lock stays your business.</p>
     </div>
     <div class="grid">
       <div class="card">
         <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6"/></svg>
-        <h3>No network permission</h3>
-        <p class="normalcase">The app doesn't request internet access in its manifest — anyone can verify it. Passwords can't be sent anywhere because the app literally cannot reach the network.</p>
+        <h3>No internet permission</h3>
+        <p class="normalcase">The app doesn't request internet access in its manifest — anyone can verify it. It literally cannot report which apps you lock, to us or to anyone.</p>
+      </div>
+      <div class="card">
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 11a2 2 0 0 1 2 2c0 3-1 5-1 5" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 6.8A6 6 0 0 1 18 12c0 1.5-.2 3-.5 4" stroke="currentColor" stroke-width="1.6"/><path d="M6.2 10A6 6 0 0 0 6 12c0 2-.4 3.5-1 5" stroke="currentColor" stroke-width="1.6"/><path d="M12 8a4 4 0 0 1 4 4c0 3-.6 5-1 6.5" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h3>Your fingerprint stays your phone's</h3>
+        <p class="normalcase">Unlocking is Android's own biometric prompt. The App Lockr only ever hears "yes" or "no" — nothing about your fingerprint is stored, by us or in the app.</p>
       </div>
       <div class="card">
         <svg class="ico" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6"/></svg>
-        <h3>Fingerprint autofill</h3>
-        <p class="normalcase">Set it as your Android autofill service once. Login screens get a suggestion; a fingerprint fills it. The vault stays locked until the moment you approve.</p>
+        <h3>Re-locks when the screen sleeps</h3>
+        <p class="normalcase">Hand your phone over and the moment the screen turns off, every locked app is locked again. No timers to configure, no session left open.</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M4 7l8-5 8 5M4 7v10l8 5 8-5V7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        <h3>Standard, audited crypto</h3>
-        <p class="normalcase">Argon2id to stretch your master password, AES-256-GCM for the vault, hardware-backed keys via the Android Keystore. No home-grown anything.</p>
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h3>One tap to pause</h3>
+        <p class="normalcase">Protection is a switch, not a ceremony. Turn it off for a minute, back on after — your app choices are remembered exactly as you left them.</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.6"/></svg>
-        <h3>A generator built in</h3>
-        <p class="normalcase">Strong, random passwords on tap — proper entropy from your device's secure RNG, with length and character rules you control.</p>
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" stroke="currentColor" stroke-width="1.6"/><path d="M4 4l16 16" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h3>It can't see inside your apps</h3>
+        <p class="normalcase">Usage access only tells the locker which app comes to the front — never what's on screen or what you type. With no internet permission, there'd be nowhere to send it anyway.</p>
       </div>
       <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4M12 15h.01" stroke="currentColor" stroke-width="1.6"/></svg>
-        <h3>Phishing-aware matching</h3>
-        <p class="normalcase">Suggestions match the real domain only. A look-alike like paypal.com.evil.io will never surface your PayPal login. Exact match, never fuzzy.</p>
-      </div>
-      <div class="card">
-        <svg class="ico" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H4z" stroke="currentColor" stroke-width="1.6"/><path d="M9 20h6M12 16v4" stroke="currentColor" stroke-width="1.6"/></svg>
-        <h3>Yours to export</h3>
-        <p class="normalcase">Back up the whole vault as one encrypted file, to wherever you like. Moving phones is export, then import. No cloud in the middle.</p>
+        <svg class="ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h3>Speaks your language</h3>
+        <p class="normalcase">English, Deutsch, Español, Français, Italiano, 日本語, 한국어, 中文 — each written natively for its audience, not machine-translated.</p>
       </div>
     </div>
   </div>
@@ -186,23 +186,23 @@
       </div>
       <div class="secrow">
         <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
-        <div><h3>Your master password never leaves memory</h3><p class="normalcase">It's stretched with Argon2id into a key that unwraps your vault, used briefly in native memory, then wiped. It's never stored, never transmitted.</p></div>
+        <div><h3>Your fingerprint never touches the app</h3><p class="normalcase">The biometric check is Android's own system sheet. The app receives a pass or a fail — never fingerprint data, which stays inside your phone's secure hardware where it always was.</p></div>
       </div>
       <div class="secrow">
         <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
-        <div><h3>The vault is AES-256-GCM encrypted</h3><p class="normalcase">Industry-standard authenticated encryption. Each entry's secret is sealed individually and only decrypted the instant you view or fill it.</p></div>
+        <div><h3>Usage access, used narrowly</h3><p class="normalcase">It's read for one fact: which app just came to the front, so a locked one can be gated. Not what's inside, not for how long, not a history — and nothing is ever logged.</p></div>
       </div>
       <div class="secrow">
         <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
-        <div><h3>Biometrics are bound to the hardware</h3><p class="normalcase">The fingerprint unlock uses a key held in the Android Keystore that the operating system refuses to release without a fresh biometric check.</p></div>
+        <div><h3>The lock screen is just a door</h3><p class="normalcase">"Display over other apps" lets the lock screen step in front of a protected app the instant it opens. That is the only thing the overlay is used for — it never draws over anything else.</p></div>
       </div>
       <div class="secrow">
         <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
-        <div><h3>The screen can't be captured</h3><p class="normalcase">Vault screens are marked secure, so they don't appear in screenshots or the app-switcher preview. The app auto-locks the moment it leaves the foreground, and clipboard copies clear themselves.</p></div>
+        <div><h3>Screen off means locked again</h3><p class="normalcase">Locked apps re-arm the moment the display sleeps, so an unlocked session can't outlive the hand you put the phone in.</p></div>
       </div>
       <div class="secrow">
         <svg class="k" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2"/></svg>
-        <div><h3>The honest trade-off</h3><p class="normalcase">Because nothing leaves your device and there's no account, no one can recover a lost vault — not even us. That's the direct consequence of real privacy, and we'd rather say it plainly. Keep your master password safe, and keep a backup.</p></div>
+        <div><h3>The honest trade-off</h3><p class="normalcase">An app locker guards your privacy from the people around you — it isn't full-disk encryption. Someone who knows your phone's own PIN could uninstall it. For everyone else, your apps are simply shut, and we'd rather tell you that plainly.</p></div>
       </div>
     </div>
     <p class="rev-note">SECURITY QUESTIONS OR SOMETHING TO REPORT — <a href="mailto:support@ubersoft.pro" style="text-decoration:underline; text-underline-offset:2px">SUPPORT@UBERSOFT.PRO</a></p>
@@ -216,10 +216,10 @@
       <h2>Straight answers</h2>
     </div>
     <div class="faq">
-      <details><summary>Where are my passwords stored?</summary><div class="ans">Only on your device, in a single encrypted vault file. There's no account and no cloud. The app requests no network permission at all, so your passwords physically cannot be sent anywhere.</div></details>
-      <details><summary>How does autofill work without an account?</summary><div class="ans">The App Lockr registers as your Android autofill service. When a login screen appears, it offers a matching entry as a suggestion and — after your fingerprint or master password — fills it. The app's own screen never has to open.</div></details>
-      <details><summary>What if I forget my master password?</summary><div class="ans">Because nothing leaves your device and there's no account, no one can reset it — not even us. That's the whole point. Keep your master password safe, and export a backup you can restore from.</div></details>
-      <details><summary>How do backups work with no cloud?</summary><div class="ans">You export the vault as an already-encrypted file, to wherever you choose. Moving to a new phone is export, then import. The file is unreadable without your master password, so it's safe to keep anywhere.</div></details>
+      <details><summary>How does it lock other apps?</summary><div class="ans">With Android's usage access, The App Lockr notices a protected app opening and immediately puts its lock screen in front of it. Your phone's own fingerprint or PIN opens the door.</div></details>
+      <details><summary>Is my fingerprint stored somewhere?</summary><div class="ans">No. The check is Android's own biometric prompt; the app is only told whether it passed. Nothing about your fingerprint exists in the app — and with no internet permission, it couldn't be sent anywhere anyway.</div></details>
+      <details><summary>Can it see what I do inside my apps?</summary><div class="ans">No. Usage access tells it which app came to the front — never screen content, keystrokes, or messages. It keeps no history, and it has no network access to send anything.</div></details>
+      <details><summary>What happens when I hand someone my phone?</summary><div class="ans">They can use everything you didn't lock. The moment the screen turns off, every locked app re-locks — so what's yours stays yours.</div></details>
       <details><summary>Is it really pay-once?</summary><div class="ans">Yes — $4.99 one time on Google Play. No subscription, no in-app purchases, no ads.</div></details>
     </div>
   </div>
@@ -228,7 +228,7 @@
 <section class="final">
   <div class="wrap">
     <span class="eyebrow">Download</span>
-    <h2>The safest place for a password is nowhere but your pocket.</h2>
+    <h2>Phones get handed around. Your apps shouldn't.</h2>
     <p class="normalcase">$4.99, one-time. No subscription. No ads. No account.</p>
     <div class="badges">
       <a class="gp-badge" href="https://play.google.com/store/apps/details?id=com.theapplockr.app" target="_blank" rel="noopener"><img src="assets/img/google-play-badge.png" alt="Get it on Google Play" height="54"></a>
@@ -241,7 +241,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="brand" href="/">The App <b>Lockr</b></a>
-        <p class="normalcase">Your passwords never leave your device. No account, no cloud, no network permission.</p>
+        <p class="normalcase">Lock any app behind your fingerprint. No account, no cloud, no internet permission.</p>
       </div>
       <div class="foot-col">
         <h4>Product</h4>
