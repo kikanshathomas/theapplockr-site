@@ -252,3 +252,18 @@ footer{border-top:1px solid var(--line); padding:44px 0 36px; margin-top:20px; t
 .doc li{margin:6px 0}
 .doc strong{color:var(--text)}
 .doc a{color:var(--accent)}
+
+/* screenshot rows (ZBT house frame) + lightbox */
+.shotframe{width:min(230px,72vw); border-radius:20px; border:1px solid var(--line2); box-shadow:0 16px 44px -22px rgba(0,0,0,.85); display:block; height:auto}
+.shot-link{display:block; padding:0; margin:0; border:0; background:none; cursor:pointer; -webkit-tap-highlight-color:transparent}
+.shot-link:focus-visible{outline:none}
+.shot-link:focus-visible img{opacity:.88}
+.shot-link img{transition:opacity .2s ease}
+.shot-link:hover img{opacity:.88}
+.lightbox{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:32px; background:rgba(8,8,9,.92); backdrop-filter:blur(4px); cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(92vw,420px); max-height:90vh; width:auto; height:auto; border-radius:14px; border:1px solid var(--line2); box-shadow:0 40px 90px -30px rgba(0,0,0,.9); cursor:default}
+.lightbox-close{position:absolute; top:18px; right:22px; width:40px; height:40px; border:0; background:none; color:var(--text-dim); font-size:30px; line-height:1; cursor:pointer; border-radius:var(--r)}
+.lightbox-close:hover{color:var(--text)}
+@media (prefers-reduced-motion:no-preference){.lightbox img{animation:lbpop .2s ease}}
+@keyframes lbpop{from{transform:scale(.97); opacity:0} to{transform:scale(1); opacity:1}}
