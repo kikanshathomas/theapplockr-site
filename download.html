@@ -100,7 +100,15 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<!-- qrcodejs 1.0.0 by Sangmin An (davidshimjs), MIT. Vendored byte-for-byte from
+     cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js on 2026-08-01;
+     sha256 xUHvBjJ4hahBW8qN9gceFBibSFUzbe9PNttUvehITzY= if it ever needs
+     re-verifying against upstream.
+     SELF-HOSTED ON PURPOSE: loading it from a CDN made that CDN a third party
+     this site contacts, which the privacy policy then had to disclose and keep
+     accurate. Deleting the dependency deletes the obligation. Do not "optimise"
+     this back to a CDN — on this product the network graph is the product. -->
+<script src="/assets/js/qrcode.min.js"></script>
 <script>
   (function () {
     var url = "https://play.google.com/store/apps/details?id=com.theapplockr.app";
