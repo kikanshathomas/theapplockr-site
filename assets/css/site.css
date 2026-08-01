@@ -48,8 +48,20 @@ h1,h2,h3{font-weight:700; letter-spacing:-0.02em; line-height:1.06}
 /* nav */
 nav{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
 .nav-in{display:flex; align-items:center; justify-content:space-between; max-width:var(--maxw); margin:0 auto; padding:15px 24px}
-.brand{display:flex; align-items:center; gap:10px; font-size:18px; font-weight:700; letter-spacing:-0.02em; color:var(--text)}
-.brand svg{width:26px; height:26px; display:block}
+/* The wordmark. Two things here are deliberate and were both wrong before:
+
+   NOT display:flex. It used to be, with gap:10px, to sit a logo next to the
+   text — but no .brand on any page contains an svg, so the only thing that gap
+   ever separated was "The App" from "Lockr". Worse, a flex container discards
+   the literal space between them, so the markup's own space did nothing and the
+   words were held apart by a layout gap instead. That is why the mark rendered
+   with a wide, uneven break.
+
+   word-spacing matches app/assets/css/styles.css .wordmark, and for the same
+   reason: letter-spacing -0.02em tightens the caps and closes the word space
+   with them, so "THE APP" collided into "THEAPP". Keep the two values in step —
+   the site header and the app header are the same wordmark. */
+.brand{font-size:18px; font-weight:700; letter-spacing:-0.02em; word-spacing:0.08em; color:var(--text)}
 .brand b{color:var(--text-dim); font-weight:400}
 .nav-r{display:flex; align-items:center; gap:24px}
 .nav-r a{font-size:13px; font-weight:500; color:var(--text-dim); transition:.15s}
@@ -93,9 +105,6 @@ nav{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 
 .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; height:50px; padding:0 26px; border-radius:var(--r); font-weight:600; font-size:14px; border:1px solid transparent; transition:.15s; cursor:pointer}
 .btn-primary{background:var(--text); color:var(--bg)}
 .btn-primary:hover{opacity:.85}
-.btn-ghost{background:transparent; color:var(--text); border-color:var(--line2)}
-.btn-ghost:hover{border-color:var(--accent); color:var(--accent)}
-.price-note{margin-top:16px; font-size:12px; color:var(--text-faint); letter-spacing:.08em}
 /* official Play badge row (ZBT house pattern) */
 .badges{display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:32px}
 .badges .gp-badge img{height:54px}
@@ -119,7 +128,10 @@ section{padding:clamp(48px,7vw,88px) 0}
 .card h3{font-size:15px; margin-bottom:9px}
 .card p{font-size:13px; color:var(--text-dim); line-height:1.6}
 
-/* text-valued stat (AES-256) sits in the same line box as the numeric ones */
+/* One stat in the band is a word, not a number ("Any" / App, lockable). It gets
+   the same line box as the three numeric stats so all four baselines align.
+   (Deliberately not naming the price here — a stylesheet comment is the last
+   place anyone would grep when the price changes.) */
 .stat .n.txt{font-size:clamp(22px,3vw,34px); display:flex; align-items:center; justify-content:center; height:clamp(30px,4vw,44px)}
 
 /* stats band (ZBT house pattern: hairline grid of four) */
@@ -142,30 +154,16 @@ section{padding:clamp(48px,7vw,88px) 0}
 .ftext h2{font-size:clamp(24px,3.2vw,38px)}
 .ftext p{color:var(--text-dim); font-size:15px; margin-top:14px; max-width:30em; line-height:1.65}
 .fviz{display:flex; justify-content:center}
-.illus{width:100%; max-width:420px; background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:26px}
-.illus svg{display:block; width:100%; height:auto}
 @media(max-width:860px){
   .feature{grid-template-columns:1fr; gap:30px}
   .feature .fviz{order:-1 !important}
   .feature.flip .ftext{order:0}
 }
 
-/* reviews (early testers) */
-.rev-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px}
-.rev{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:24px 22px; display:flex; flex-direction:column; gap:16px; transition:border-color .15s}
-.rev:hover{border-color:var(--line2)}
-.rev .q{font-size:14px; color:var(--text); line-height:1.65; flex:1}
-.rev .who{font-size:10px; font-weight:600; letter-spacing:.14em; color:var(--text-faint)}
+/* the one surviving line of the retired reviews block */
 .rev-note{text-align:center; margin-top:22px; font-size:11px; font-weight:500; letter-spacing:.1em; color:var(--text-faint)}
 
-/* download band (ZBT house pattern) */
-.download{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center}
-.download h2{font-size:clamp(30px,4.6vw,54px); letter-spacing:-0.03em; max-width:16ch; margin:16px auto 0}
-.download p{color:var(--text-dim); margin-top:16px; font-size:15px}
 
-/* reveal-on-scroll (ZBT house pattern) */
-.reveal{opacity:0; transform:translateY(20px); transition:opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1; transform:none}
 @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none} }
 
 /* security list */
@@ -243,15 +241,6 @@ footer{border-top:1px solid var(--line); padding:44px 0 36px; margin-top:20px}
 .trust-strip span::before{content:""; width:4px; height:4px; border-radius:50%; background:var(--text-faint)}
 
 /* generic page (privacy/security) */
-.doc{max-width:760px; margin:0 auto; padding:clamp(40px,6vw,72px) 0}
-.doc h1{font-size:clamp(30px,4vw,44px); margin-bottom:10px}
-.doc .updated{color:var(--text-faint); font-size:12px; letter-spacing:.1em; margin-bottom:36px}
-.doc h2{font-size:18px; margin:34px 0 12px}
-.doc p, .doc li{color:var(--text-dim); font-size:14px; line-height:1.7; text-transform:none; letter-spacing:0}
-.doc ul{padding-left:20px; margin:10px 0}
-.doc li{margin:6px 0}
-.doc strong{color:var(--text)}
-.doc a{color:var(--accent)}
 
 /* screenshot rows (ZBT house frame) + lightbox */
 .shotframe{width:min(230px,72vw); border-radius:20px; border:1px solid var(--line2); box-shadow:0 16px 44px -22px rgba(0,0,0,.85); display:block; height:auto}
