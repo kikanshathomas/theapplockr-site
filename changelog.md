@@ -2,7 +2,7 @@
 
 All notable changes to theapplockr.com are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-App release notes live in theapplockr-dev `changelog.txt`.
+App release notes are in the "What's new" section of The App Lockr on [Google Play](https://play.google.com/store/apps/details?id=com.theapplockr.app).
 
 ## [Unreleased]
 
