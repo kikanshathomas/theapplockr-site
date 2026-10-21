@@ -86,7 +86,7 @@
     </ul>
     <p>It also holds a few permissions that Android grants when you install it, without a setup screen:</p>
     <ul class="body-list">
-      <li><b>Running in the background:</b> while protection is on, the part that watches for locked apps runs as a service that Android marks with a notification. On Android 13 and newer, that notification only shows if you have allowed notifications for the app.</li>
+      <li><b>Running in the background:</b> while protection is on, the part that watches for locked apps runs as a background service. On Android 12 and older, Android shows a notification for it while protection is on. On Android 13 and newer, the app does not ask for permission to show notifications, so that notification does not appear in your notification drawer; Android lists the app under "Active apps" in the notification drawer instead, and the app's Home screen shows whether protection is on.</li>
       <li><b>Starting after a restart or an update:</b> so protection comes back on by itself. It only starts if you had protection on.</li>
       <li><b>Seeing which apps you have:</b> to list the apps you can lock, the app can see the apps that have an icon in your app drawer, with their names and icons. This is read on your phone and goes nowhere.</li>
     </ul>
