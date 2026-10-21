@@ -80,20 +80,20 @@
     <h2><span class="n">05</span> Permissions</h2>
     <p>The app asks for three things, each explained on its own setup screen:</p>
     <ul class="body-list">
-      <li><b>Usage access:</b> lets the app notice that a locked app has come to the front, so the lock screen can appear. It is read for that one fact only — never what is on the screen, what you type, or how long you use anything. The app stores no history of it, apart from the system-log entries described in section 06.</li>
+      <li><b>Usage access:</b> lets the app notice that a locked app has come to the front, so the lock screen can appear. It is read for that one fact only — never what is on the screen, what you type, or how long you use anything. The app stores no history of it (section 06 covers the short entries it writes to the system log).</li>
       <li><b>Display over other apps:</b> lets the lock screen appear in front of a protected app. That is the only thing it is used for.</li>
       <li><b>Biometrics:</b> unlocking uses Android's own biometric prompt. The check is performed entirely by your device's secure hardware; the app is only told whether it passed. Biometric data never enters the app and never leaves your device.</li>
     </ul>
     <p>It also holds a few permissions that Android grants when you install it, without a setup screen:</p>
     <ul class="body-list">
-      <li><b>Running in the background:</b> while protection is on, the part that watches for locked apps runs as a service that Android marks with a notification. On Android 13 and newer, that notification only shows if you have allowed notifications for the app.</li>
+      <li><b>Running in the background:</b> while protection is on, the part that watches for locked apps runs as a background service. On Android 12 and older, Android shows a notification for it while protection is on. On Android 13 and newer, the app does not ask for permission to show notifications, so that notification does not appear in your notification drawer; Android lists the app under "Active apps" in the notification drawer instead, and the app's Home screen shows whether protection is on.</li>
       <li><b>Starting after a restart or an update:</b> so protection comes back on by itself. It only starts if you had protection on.</li>
       <li><b>Seeing which apps you have:</b> to list the apps you can lock, the app can see the apps that have an icon in your app drawer, with their names and icons. This is read on your phone and goes nowhere.</li>
     </ul>
     <p class="note">Notably absent: internet access. The app does not request it and cannot use it.</p>
 
     <h2><span class="n">06</span> What the app can see — and what it can't</h2>
-    <p>To do its job, the app knows which application just came to the foreground and compares it against your locked list, entirely on your device. It cannot read the content of other apps and cannot record your screen. The current version of the app does write short technical entries to your phone's Android system log, and some of them name a locked app by its package name: when protection starts (the list of locked apps), when a locked app is opened and the lock screen appears, and whether it was then unlocked or cancelled. These entries are kept by Android on your phone. The app has no internet permission, so it cannot send them anywhere, and Ubersoft never receives them. Apart from these log entries, nothing the app observes is stored or transmitted.</p>
+    <p>To do its job, the app knows which application just came to the foreground and compares it against your locked list, entirely on your device. It cannot read the content of other apps and cannot record your screen. Current versions of the app from Google Play do not write the names of the apps you lock to your phone's Android system log; earlier versions did, and updating the app stops this. The app still writes a few short status and error entries there without app names, for example when protection starts or stops, how many apps are locked, and when the lock screen has to be shown again. These entries are kept by Android on your phone. The app has no internet permission, so it cannot send them anywhere, and Ubersoft never receives them. Apart from these log entries, nothing the app observes is stored or transmitted.</p>
 
     <h2><span class="n">07</span> Children's privacy</h2>
     <p>The app is not directed to children under 13 (or the equivalent minimum age in your region), and we do not knowingly collect information from children. Because the app collects no information at all, no personal information from any user — child or adult — is gathered by us.</p>
