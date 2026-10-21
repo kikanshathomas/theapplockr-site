@@ -66,7 +66,7 @@
     <p>The app stores the list of apps you chose to lock, whether protection is switched on, and your preferences such as theme and language. All of it lives in the app's private storage on your device. It is not transmitted to us or to anyone else.</p>
 
     <h2><span class="n">02</span> Information we collect</h2>
-    <p>The app collects nothing. It has no account system, no server component, and — unusually for a modern app — <b>requests no internet permission at all</b>, so it has no technical means of sending your data anywhere. You can confirm this in your device's app settings. Nothing you do in the app is collected, received, or stored by us or by anyone else.</p>
+    <p>The app collects nothing. It has no account system, no server component, and — unusually for a modern app — <b>requests no internet permission at all</b>, so it has no technical means of sending your data anywhere. You can confirm this in your device's app settings. Nothing you do in the app is collected or received by us or by any third party; the only records are kept on your phone (sections 01 and 06).</p>
     <p>This website counts page views, which is described in section 03. That is the only thing we measure anywhere, and it is not connected to the app.</p>
 
     <h2><span class="n">03</span> Analytics and advertising</h2>
@@ -80,7 +80,7 @@
     <h2><span class="n">05</span> Permissions</h2>
     <p>The app asks for three things, each explained on its own setup screen:</p>
     <ul class="body-list">
-      <li><b>Usage access:</b> lets the app notice that a locked app has come to the front, so the lock screen can appear. It is read for that one fact only — never what is on the screen, what you type, or how long you use anything, and no history is kept.</li>
+      <li><b>Usage access:</b> lets the app notice that a locked app has come to the front, so the lock screen can appear. It is read for that one fact only — never what is on the screen, what you type, or how long you use anything. The app stores no history of it, apart from the system-log entries described in section 06.</li>
       <li><b>Display over other apps:</b> lets the lock screen appear in front of a protected app. That is the only thing it is used for.</li>
       <li><b>Biometrics:</b> unlocking uses Android's own biometric prompt. The check is performed entirely by your device's secure hardware; the app is only told whether it passed. Biometric data never enters the app and never leaves your device.</li>
     </ul>
@@ -93,7 +93,7 @@
     <p class="note">Notably absent: internet access. The app does not request it and cannot use it.</p>
 
     <h2><span class="n">06</span> What the app can see — and what it can't</h2>
-    <p>To do its job, the app knows which application just came to the foreground and compares it against your locked list, entirely on your device. It cannot read the content of other apps, cannot record your screen, and cannot log your activity. Nothing it observes is stored or transmitted — there is nowhere for it to go.</p>
+    <p>To do its job, the app knows which application just came to the foreground and compares it against your locked list, entirely on your device. It cannot read the content of other apps and cannot record your screen. The current version of the app does write short technical entries to your phone's Android system log, and some of them name a locked app by its package name: when protection starts (the list of locked apps), when a locked app is opened and the lock screen appears, and whether it was then unlocked or cancelled. These entries are kept by Android on your phone. The app has no internet permission, so it cannot send them anywhere, and Ubersoft never receives them. Apart from these log entries, nothing the app observes is stored or transmitted.</p>
 
     <h2><span class="n">07</span> Children's privacy</h2>
     <p>The app is not directed to children under 13 (or the equivalent minimum age in your region), and we do not knowingly collect information from children. Because the app collects no information at all, no personal information from any user — child or adult — is gathered by us.</p>
