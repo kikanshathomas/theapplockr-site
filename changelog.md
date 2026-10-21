@@ -6,7 +6,13 @@ App release notes are in the "What's new" section of The App Lockr on [Google Pl
 
 ## [Unreleased]
 
-### Changed (2026-10-21)
+### Added
+- The privacy policy now lists the on-device log of the app's last 20 errors.
+
+### Changed
+- The privacy policy now says the app shows no notification in the drawer on Android 13+.
+- It says the app opens its lock screen and draws nothing over other apps.
+- It says unlocking takes your fingerprint or your phone's PIN, pattern or password.
 - The privacy policy now describes the app's Android system-log entries.
 - Section 06 no longer says the app cannot log activity or that it stores nothing.
 - Section 02 now says nothing reaches us or third parties; records stay on your phone.
