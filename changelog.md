@@ -13,12 +13,12 @@ App release notes are in the "What's new" section of The App Lockr on [Google Pl
 - The privacy policy now says the app shows no notification in the drawer on Android 13+.
 - It says the app opens its lock screen and draws nothing over other apps.
 - It says unlocking takes your fingerprint or your phone's PIN, pattern or password.
-
-### Changed (2026-10-21)
 - The privacy policy now describes the app's Android system-log entries.
 - Section 06 no longer says the app cannot log activity or that it stores nothing.
 - Section 02 now says nothing reaches us or third parties; records stay on your phone.
 - Section 05 now says usage access keeps no history apart from those log entries.
 - The home page and FAQ now mention the system-log entries that name locked apps.
 - The home page no longer calls "Display over other apps" an overlay.
+- The privacy policy, home page and FAQ now say current app versions don't write locked-app names to the system log.
+- Unlocking wording now names strong (Class 3) biometrics as well as PIN, pattern or password.
 - The privacy policy's effective date is now October 21, 2026.
