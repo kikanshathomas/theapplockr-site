@@ -1,0 +1,258 @@
+/* ============================================================
+   theapplockr.com — marketing site in the Ubersoft app feel.
+   Outfit, editorial uppercase, 4px radii, inverted-mono buttons.
+   Light default + dark via prefers-color-scheme. Self-hosted fonts
+   (no CDN) — fitting for a no-network product.
+   ============================================================ */
+
+@font-face { font-family:'Outfit'; font-style:normal; font-weight:400; font-display:swap; src:url('/assets/fonts/outfit-400.woff2') format('woff2'); }
+@font-face { font-family:'Outfit'; font-style:normal; font-weight:500; font-display:swap; src:url('/assets/fonts/outfit-500.woff2') format('woff2'); }
+@font-face { font-family:'Outfit'; font-style:normal; font-weight:600; font-display:swap; src:url('/assets/fonts/outfit-600.woff2') format('woff2'); }
+@font-face { font-family:'Outfit'; font-style:normal; font-weight:700; font-display:swap; src:url('/assets/fonts/outfit-700.woff2') format('woff2'); }
+
+:root{
+  --bg:#ffffff; --bg-soft:#f6f6f6; --card:#ffffff;
+  --line:#e8e8e8; --line2:#d8d8d8;
+  --text:#1a1a1a; --text-dim:#6b6b6b; --text-faint:#a8a8a8;
+  --accent:#0b6fd8; --ok:#067647;   /* accent = the icon's neon-blue keyhole glow */
+  --sans:'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --r:4px; --maxw:1080px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0e0e10; --bg-soft:#1a1a1d; --card:#151518;
+    --line:#2a2a2e; --line2:#3a3a40;
+    --text:#f0f0f2; --text-dim:#9a9aa0; --text-faint:#6a6a70;
+    --accent:#46a6ff; --ok:#4ade80;
+  }
+}
+
+*{margin:0; padding:0; box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:400;
+  line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  text-transform:uppercase; letter-spacing:0.02em; overflow-x:hidden;
+}
+a{color:inherit; text-decoration:none}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+h1,h2,h3{font-weight:700; letter-spacing:-0.02em; line-height:1.06}
+.eyebrow{font-size:11px; font-weight:600; letter-spacing:0.16em; color:var(--accent)}
+/* Free text (prose) opts out of the editorial uppercase where readability wins */
+.normalcase{text-transform:none; letter-spacing:0}
+
+/* announcement */
+.announce{background:var(--bg-soft); border-bottom:1px solid var(--line); text-align:center; padding:9px 16px; font-size:11px; font-weight:500; letter-spacing:0.12em; color:var(--text-dim)}
+.announce b{color:var(--accent); font-weight:600}
+
+/* nav */
+nav{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(12px); border-bottom:1px solid var(--line)}
+.nav-in{display:flex; align-items:center; justify-content:space-between; max-width:var(--maxw); margin:0 auto; padding:15px 24px}
+/* The wordmark. Two things here are deliberate and were both wrong before:
+
+   NOT display:flex. It used to be, with gap:10px, to sit a logo next to the
+   text — but no .brand on any page contains an svg, so the only thing that gap
+   ever separated was "The App" from "Lockr". Worse, a flex container discards
+   the literal space between them, so the markup's own space did nothing and the
+   words were held apart by a layout gap instead. That is why the mark rendered
+   with a wide, uneven break.
+
+   word-spacing matches app/assets/css/styles.css .wordmark, and for the same
+   reason: letter-spacing -0.02em tightens the caps and closes the word space
+   with them, so "THE APP" collided into "THEAPP". Keep the two values in step —
+   the site header and the app header are the same wordmark. */
+.brand{font-size:18px; font-weight:700; letter-spacing:-0.02em; word-spacing:0.08em; color:var(--text)}
+.brand b{color:var(--text-dim); font-weight:400}
+.nav-r{display:flex; align-items:center; gap:24px}
+.nav-r a{font-size:13px; font-weight:500; color:var(--text-dim); transition:.15s}
+.nav-r a:hover{color:var(--text)}
+.nav-btn{background:var(--text); color:var(--bg) !important; padding:9px 18px; border-radius:var(--r); font-weight:600; font-size:12px; transition:.15s}
+.nav-btn:hover{opacity:.85}
+/* Hamburger toggle — hidden on desktop, shown under 860px (ZBT house pattern) */
+.nav-toggle{display:none; flex-direction:column; justify-content:center; align-items:center; gap:4px; width:40px; height:40px; padding:0; background:transparent; border:1px solid var(--line2); border-radius:var(--r); cursor:pointer; -webkit-tap-highlight-color:transparent}
+.nav-toggle span{display:block; width:17px; height:1.5px; background:var(--text); transition:transform .22s ease, opacity .22s ease}
+.nav-toggle.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+@media(max-width:860px){
+  .nav-toggle{display:flex}
+  .nav-in{position:relative}
+  .nav-r{
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; align-items:stretch; gap:0;
+    background:color-mix(in srgb, var(--bg) 98%, transparent); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    max-height:0; overflow:hidden; transition:max-height .28s ease;
+  }
+  .nav-r.open{max-height:380px}
+  .nav-r a{padding:15px 24px; font-size:14px; color:var(--text); border-top:1px solid var(--line)}
+  .nav-r a:first-child{border-top:0}
+  /* No persistent Get-the-app pill on mobile — it lives in the menu panel */
+  .nav-r .nav-btn{background:transparent; color:var(--text) !important; border-radius:0; font-size:14px; font-weight:600; padding:15px 24px}
+}
+
+/* hero */
+.hero{padding:clamp(56px,8vw,104px) 0 clamp(40px,6vw,72px); text-align:center}
+.hero .eyebrow{display:inline-block; margin-bottom:22px}
+.hero-mark{width:92px; height:92px; margin:0 auto 24px; display:block}
+/* App icon treatment (ZBT house pattern) */
+.app-icon{border-radius:22%; border:1px solid var(--line); box-shadow:0 10px 34px color-mix(in srgb, #000 30%, transparent)}
+.hero-icon{display:block; margin:0 auto 22px; width:96px; height:96px}
+.hero h1{font-size:clamp(40px,7vw,80px); font-weight:700; letter-spacing:-0.03em; max-width:16ch; margin:0 auto}
+.hero h1 .dim{color:var(--accent)}
+.hero .lede{font-size:clamp(15px,1.6vw,18px); font-weight:400; color:var(--text-dim); max-width:36em; margin:22px auto 0}
+.cta-row{display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:32px}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; height:50px; padding:0 26px; border-radius:var(--r); font-weight:600; font-size:14px; border:1px solid transparent; transition:.15s; cursor:pointer}
+.btn-primary{background:var(--text); color:var(--bg)}
+.btn-primary:hover{opacity:.85}
+/* official Play badge row (ZBT house pattern) */
+.badges{display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:32px}
+.badges .gp-badge img{height:54px}
+
+/* trust strip */
+.trust{display:flex; gap:10px 22px; justify-content:center; flex-wrap:wrap; margin-top:30px; font-size:11px; font-weight:500; letter-spacing:.1em; color:var(--text-faint)}
+.trust span{display:inline-flex; align-items:center; gap:8px}
+.trust span::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--accent)}
+
+/* section */
+section{padding:clamp(48px,7vw,88px) 0}
+.section-head{text-align:center; max-width:40ch; margin:0 auto clamp(34px,4vw,54px)}
+.section-head .eyebrow{display:block; margin-bottom:14px}
+.section-head h2{font-size:clamp(26px,3.4vw,40px)}
+.section-head p{margin-top:14px; color:var(--text-dim); font-size:15px}
+
+/* feature grid */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:26px 24px}
+.card .ico{width:34px; height:34px; margin-bottom:16px; color:var(--accent)}
+.card h3{font-size:15px; margin-bottom:9px}
+.card p{font-size:13px; color:var(--text-dim); line-height:1.6}
+
+/* One stat in the band is a word, not a number ("Any" / App, lockable). It gets
+   the same line box as the three numeric stats so all four baselines align.
+   (Deliberately not naming the price here — a stylesheet comment is the last
+   place anyone would grep when the price changes.) */
+.stat .n.txt{font-size:clamp(22px,3vw,34px); display:flex; align-items:center; justify-content:center; height:clamp(30px,4vw,44px)}
+
+/* stats band (ZBT house pattern: hairline grid of four) */
+.stats{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg-soft)}
+.stats-in{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line)}
+.stat{background:var(--bg-soft); padding:36px 20px 32px; text-align:center}
+.stat .ico{width:24px; height:24px; margin:0 auto 16px; color:var(--text-faint); transition:filter .2s ease}
+.stat .ico svg{width:100%; height:100%; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round}
+.stat:hover .ico{filter:brightness(1.12)}
+.stat .n{font-size:clamp(30px,4vw,44px); font-weight:700; letter-spacing:-0.03em; color:var(--text); font-variant-numeric:tabular-nums; line-height:1}
+.stat .n .a{color:var(--text-faint)}
+.stat .k{font-size:10px; font-weight:600; letter-spacing:0.16em; color:var(--text-dim); margin-top:10px}
+@media(max-width:860px){ .stats-in{grid-template-columns:1fr 1fr} }
+
+/* feature rows (ZBT house pattern: text + visual, alternating) */
+.feature{display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px,6vw,80px); align-items:center}
+.feature + .feature{margin-top:clamp(56px,8vw,96px)}
+.feature.flip .ftext{order:2}
+.ftext .eyebrow{display:block; margin-bottom:14px}
+.ftext h2{font-size:clamp(24px,3.2vw,38px)}
+.ftext p{color:var(--text-dim); font-size:15px; margin-top:14px; max-width:30em; line-height:1.65}
+.fviz{display:flex; justify-content:center}
+@media(max-width:860px){
+  .feature{grid-template-columns:1fr; gap:30px}
+  .feature .fviz{order:-1 !important}
+  .feature.flip .ftext{order:0}
+}
+
+/* the one surviving line of the retired reviews block */
+.rev-note{text-align:center; margin-top:22px; font-size:11px; font-weight:500; letter-spacing:.1em; color:var(--text-faint)}
+
+
+@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none} }
+
+/* security list */
+.seclist{max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:2px}
+.secrow{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start; padding:20px 4px; border-bottom:1px solid var(--line)}
+.secrow .k{width:30px; height:30px; color:var(--ok); flex-shrink:0}
+.secrow h3{font-size:14px; margin-bottom:6px}
+.secrow p{font-size:13px; color:var(--text-dim); line-height:1.6}
+
+/* faq */
+.faq{max-width:760px; margin:0 auto}
+.faq details{border-bottom:1px solid var(--line); padding:6px 0}
+.faq summary{list-style:none; cursor:pointer; padding:18px 4px; font-size:15px; font-weight:600; display:flex; justify-content:space-between; align-items:center; gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+"; color:var(--text-faint); font-weight:400; font-size:22px; transition:.2s}
+.faq details[open] summary::after{transform:rotate(45deg); color:var(--accent)}
+.faq .ans{padding:0 4px 20px; color:var(--text-dim); font-size:14px; line-height:1.65; text-transform:none; letter-spacing:0}
+
+/* final cta */
+.final{text-align:center}
+.final .eyebrow{display:block; margin-bottom:16px}
+.final h2{font-size:clamp(28px,4vw,48px); max-width:16ch; margin:0 auto}
+.final p{color:var(--text-dim); margin-top:16px; font-size:15px}
+
+/* footer (house pattern: brand + link columns + legal strip) —
+   sentence case like every other product site; only the h4 labels stay uppercase */
+footer{border-top:1px solid var(--line); padding:44px 0 36px; margin-top:20px}
+.foot-col h4{text-transform:uppercase}
+.foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:32px}
+.foot-brand .brand{font-size:18px}
+.foot-brand p{color:var(--text-dim); font-size:12px; margin-top:14px; max-width:24em}
+.foot-col h4{font-size:10px; font-weight:600; letter-spacing:0.16em; color:var(--text-faint); margin-bottom:14px}
+.foot-col a{display:block; color:var(--text-dim); font-size:13px; font-weight:400; padding:5px 0; transition:.15s}
+.foot-col a:hover{color:var(--text)}
+.foot-legal{border-top:1px solid var(--line); margin-top:38px; padding-top:22px; font-size:11px; color:var(--text-faint); line-height:1.7; text-transform:uppercase; letter-spacing:0.04em}
+.foot-legal a{color:var(--text-dim); text-decoration:underline; text-decoration-color:var(--line2); text-underline-offset:2px}
+.foot-legal a:hover{color:var(--text)}
+@media(max-width:860px){ .foot-grid{grid-template-columns:1fr 1fr} }
+
+/* legal pages — ZBT house format (numbered sections + plain-terms summary) */
+.legal-head{padding:clamp(48px,7vw,84px) 0 clamp(28px,4vw,40px); border-bottom:1px solid var(--line)}
+.legal-head .eyebrow{display:block; margin-bottom:16px}
+.legal-head h1{font-size:clamp(34px,5.5vw,60px); font-weight:800; letter-spacing:-0.03em}
+.legal-head .meta{margin-top:16px; font-size:12px; font-weight:500; letter-spacing:.08em; color:var(--text-faint); text-transform:uppercase}
+.legal{max-width:760px; margin:0 auto; padding:clamp(40px,6vw,64px) 0 80px}
+/* legal body copy reads sentence-case like every other product's legal pages —
+   only the eyebrow/meta/h2/summary-title keep the site's uppercase voice */
+.legal p, .legal li{text-transform:none; letter-spacing:0}
+.legal .lede{font-size:17px; color:var(--text); font-weight:400; line-height:1.6}
+.legal .lede b{font-weight:600}
+.legal .summary{margin:26px 0 8px; padding:22px 24px; background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--r)}
+.legal .summary .st{text-transform:uppercase; letter-spacing:.16em; font-size:11px; font-weight:600; color:var(--text-faint); margin-bottom:14px}
+.legal .summary ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px}
+.legal .summary li{display:flex; gap:12px; align-items:flex-start; font-size:15px; color:var(--text-dim)}
+.legal .summary li b{color:var(--text); font-weight:600}
+.legal .summary .tick{flex:0 0 auto; width:20px; height:20px; border-radius:var(--r); background:color-mix(in srgb, var(--accent) 10%, transparent); border:1px solid var(--line); display:grid; place-items:center; margin-top:1px}
+.legal .summary .tick svg{width:11px; height:11px; stroke:var(--accent); fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
+.legal h2{text-transform:uppercase; letter-spacing:.04em; font-size:14px; font-weight:700; color:var(--text); margin:40px 0 14px; padding-top:24px; border-top:1px solid var(--line); display:flex; gap:12px; align-items:baseline}
+.legal h2 .n{font-size:11px; color:var(--accent); font-weight:600; letter-spacing:.1em; font-variant-numeric:tabular-nums}
+.legal p{font-size:15px; color:var(--text-dim); line-height:1.72; margin-bottom:14px}
+.legal p b, .legal li b{color:var(--text); font-weight:600}
+.legal ul.body-list{margin:0 0 14px; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:10px}
+.legal ul.body-list li{font-size:15px; color:var(--text-dim); line-height:1.65; padding-left:18px; position:relative}
+.legal ul.body-list li::before{content:""; position:absolute; left:2px; top:9px; width:5px; height:5px; border-radius:50%; background:var(--text-faint)}
+.legal a.link{color:var(--text); text-decoration:underline; text-underline-offset:2px; text-decoration-color:var(--line2)}
+.legal a.link:hover{text-decoration-color:var(--text-dim)}
+.legal .note{font-size:13px; color:var(--text-faint); font-style:italic; margin-top:6px}
+
+/* download page — ZBT house elements */
+.gp-badge{display:inline-block; transition:opacity .15s}
+.gp-badge:hover{opacity:.85}
+.gp-badge img{height:56px; width:auto; display:block; margin:0 auto}
+.trust-strip{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:28px; font-size:11px; font-weight:500; letter-spacing:.1em; color:var(--text-faint)}
+.trust-strip span{display:inline-flex; align-items:center; gap:7px}
+.trust-strip span::before{content:""; width:4px; height:4px; border-radius:50%; background:var(--text-faint)}
+
+/* generic page (privacy/security) */
+
+/* screenshot rows (ZBT house frame) + lightbox */
+.shotframe{width:min(230px,72vw); border-radius:20px; border:1px solid var(--line2); box-shadow:0 16px 44px -22px rgba(0,0,0,.85); display:block; height:auto}
+.shot-link{display:block; padding:0; margin:0; border:0; background:none; cursor:pointer; -webkit-tap-highlight-color:transparent}
+.shot-link:focus-visible{outline:none}
+.shot-link:focus-visible img{opacity:.88}
+.shot-link img{transition:opacity .2s ease}
+.shot-link:hover img{opacity:.88}
+.lightbox{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:32px; background:rgba(8,8,9,.92); backdrop-filter:blur(4px); cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(92vw,420px); max-height:90vh; width:auto; height:auto; border-radius:14px; border:1px solid var(--line2); box-shadow:0 40px 90px -30px rgba(0,0,0,.9); cursor:default}
+.lightbox-close{position:absolute; top:18px; right:22px; width:40px; height:40px; border:0; background:none; color:var(--text-dim); font-size:30px; line-height:1; cursor:pointer; border-radius:var(--r)}
+.lightbox-close:hover{color:var(--text)}
+@media (prefers-reduced-motion:no-preference){.lightbox img{animation:lbpop .2s ease}}
+@keyframes lbpop{from{transform:scale(.97); opacity:0} to{transform:scale(1); opacity:1}}
