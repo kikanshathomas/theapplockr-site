@@ -19,4 +19,6 @@ App release notes are in the "What's new" section of The App Lockr on [Google Pl
 - The privacy policy now says current app versions don't log the names of locked apps.
 - The home page and FAQ now say the same about the system log.
 - The home page no longer calls "Display over other apps" an overlay.
+- The privacy policy, home page and FAQ now say current app versions don't write locked-app names to the system log.
+- Unlocking wording now names strong (Class 3) biometrics as well as PIN, pattern or password.
 - The privacy policy's effective date is now October 21, 2026.
