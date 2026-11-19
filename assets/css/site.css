@@ -68,7 +68,9 @@ nav{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 
 .nav-r a:hover{color:var(--text)}
 .nav-btn{background:var(--text); color:var(--bg) !important; padding:9px 18px; border-radius:var(--r); font-weight:600; font-size:12px; transition:.15s}
 .nav-btn:hover{opacity:.85}
-/* Hamburger toggle — hidden on desktop, shown under 860px (ZBT house pattern) */
+/* Hamburger toggle — hidden on desktop, shown under 860px (ZBT house pattern).
+   The .open rules on this button never match: the nav script toggles .open on
+   #navLinks and only sets aria-expanded on the button, so the icon stays three bars. */
 .nav-toggle{display:none; flex-direction:column; justify-content:center; align-items:center; gap:4px; width:40px; height:40px; padding:0; background:transparent; border:1px solid var(--line2); border-radius:var(--r); cursor:pointer; -webkit-tap-highlight-color:transparent}
 .nav-toggle span{display:block; width:17px; height:1.5px; background:var(--text); transition:transform .22s ease, opacity .22s ease}
 .nav-toggle.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
@@ -162,9 +164,6 @@ section{padding:clamp(48px,7vw,88px) 0}
 
 /* the one surviving line of the retired reviews block */
 .rev-note{text-align:center; margin-top:22px; font-size:11px; font-weight:500; letter-spacing:.1em; color:var(--text-faint)}
-
-
-@media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none; transition:none} }
 
 /* security list */
 .seclist{max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:2px}
